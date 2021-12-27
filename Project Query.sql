@@ -6,7 +6,7 @@ from Covid_Deaths order by 1,2
 
 
 
---Looking at the cases number of different countries 
+--Looking at the number of cases of different countries 
 select location, date, population, total_cases, total_cases_per_million, 
 (total_cases/population)*100 as Percentage_of_population_infected
 from Covid_Deaths 
