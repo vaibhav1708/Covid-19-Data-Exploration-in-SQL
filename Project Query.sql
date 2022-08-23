@@ -148,11 +148,4 @@ order by 2,3
 
 
 
---Creating view for further visualization
-create view PercentPeopleVaccinated as
-select dth.continent, dth.location, dth.date, dth.population, vacc.new_vaccinations,
-sum(vacc.new_vaccinations) over (partition by dth.location) as Total_no_of_People_Vaccinated
-from Covid_Deaths as dth join Covid_Vaccinations as vacc 
-on dth.date=vacc.date and dth.location=vacc.location
 
-select * from PercentPeopleVaccinated order by 2,3
