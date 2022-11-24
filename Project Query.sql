@@ -26,7 +26,7 @@ order by 1,2
 
 
 
---Looking at the death percentage of the total population and the mortalit rate in each country
+--Looking at the death percentage of the total population and the mortality rate in each country
 select location, date, population, total_cases, total_deaths, new_deaths, (total_deaths/total_cases)*100 as Mortality_Rate,
 (total_deaths/population)*100 as Death_Percentage from Covid_Deaths
 where location like '%United_States%'
@@ -39,7 +39,7 @@ order by 1,2
 
 
 
---Looking at the highest case count of each country and precentage of the total population infected in each country 
+--Looking at the highest case count of each country and percentage of the total population infected in each country 
 select location, population, max(total_cases) as Highest_case,
 max((total_cases)/population)*100 as Percentage_people_infected 
 from Covid_Deaths 
